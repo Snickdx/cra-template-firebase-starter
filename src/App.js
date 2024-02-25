@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { auth } from "./config/firebase";
 import routes from "./config/routes";
 import Center from "./components/utils/Center";
-import AuthChecker from "./components/auth/AuthChecker";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -36,11 +35,7 @@ function App() {
               key={index}
               path={route.path}
               element={
-                route.protected ? (
-                  <AuthChecker>
-                    <route.component />
-                  </AuthChecker>
-                ) : (
+                (
                   <route.component />
                 )
               }

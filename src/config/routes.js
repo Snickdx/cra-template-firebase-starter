@@ -6,7 +6,7 @@ const routes = [
     path: "",
     component: Home,
     name: "Home Page",
-    protected: true,
+    protected: false,
   },
   {
     path: "/login",
